@@ -1,0 +1,78 @@
+<style type="text/css">
+#ProfilePage
+{
+    /* Move it off the top of the page, then centre it horizontally */
+    margin: 50px auto;
+    width: 635px;
+
+/* For visibility. Delete me */
+/* border: 1px solid grey; */
+}
+
+#LeftCol
+{
+    /* Move it to the left */
+    float: left;
+
+    width: 200px;
+    text-align: center;
+
+    /* Move it away from the content */
+    margin-right: 20px;
+
+/* For visibility. Delete me */
+/* border: 1px solid grey; */
+}
+
+#Photo
+{
+    /* Width and height of photo container */
+    width: 200px;
+    height: 200px;
+
+/* For visibility. Delete me */
+/* border: 1px solid #c0c0c0; */
+}
+
+#PhotoOptions
+{
+    text-align: center;
+    width: 200px;
+
+/* For visibility. Delete me */
+/* border: 1px solid #c0c0c0; */
+}
+
+#Info
+{
+    width: 400px;
+    text-align: center;
+    right: 200px;
+
+    /* Move it to the right */
+    float: left;
+
+/* For visibility. Delete me */
+/* border: 1px solid #c0c0c0; */
+}
+
+#Info strong
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 100px;
+
+/* For visibility. Delete me */
+/* border: 1px solid orange; */
+}
+
+#Info span
+{
+    /* Give it a width */
+    display: inline-block;
+    width: 250px;
+
+/* For visibility. Delete me */
+border: 1px solid #c0c0c0;
+}
+</style>

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Apple iOS and Android stuff (do not remove) -->
+<meta name="apple-mobile-web-app-capable" content="no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" />
+
+<!-- Required Stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/fonts/ptsans/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/fluido.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/mws.style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/icons/16x16.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/icons/24x24.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/icons/32x32.css" media="screen" />
+
+<!-- Demo and Plugin Stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/demo.css" media="screen" />
+
+
+<!-- Theme Stylesheet -->
+<link rel="stylesheet" type="text/css" href="css/mws.theme.css" media="screen" />
+
+<!-- JavaScript Plugins -->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<!-- jQuery-UI Dependent Scripts -->
+<script type="text/javascript" src="plugins/spinner/jquery.mousewheel-min.js"></script>
+<script type="text/javascript" src="plugins/spinner/ui.spinner-min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="plugins/timepicker/timepicker-min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+
+<!-- Plugin Scripts -->
+<script type="text/javascript" src="plugins/imgareaselect/jquery.imgareaselect.min.js"></script>
+<script type="text/javascript" src="plugins/duallistbox/jquery.dualListBox-1.3.min.js"></script>
+<script type="text/javascript" src="plugins/jgrowl/jquery.jgrowl-min.js"></script>
+<script type="text/javascript" src="plugins/fileinput/js/jQuery.fileinput.js"></script>
+<script type="text/javascript" src="plugins/fullcalendar/fullcalendar.min.js"></script>
+<script type="text/javascript" src="plugins/datatables/jquery.dataTables-min.js"></script>
+<script type="text/javascript" src="plugins/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="plugins/prettyphoto/js/jquery.prettyPhoto-min.js"></script>
+
+
+<!-- Core Script -->
+<script type="text/javascript" src="js/mws.js"></script>
+<script type="text/javascript" src="js/knockout-3.2.0.js"></script>
+<script type="text/javascript" src="helpers/job.js"></script>
+<script type="text/javascript" src="helpers/DatePicker.js"></script>
+<title>Job Details</title>
+</head>
+
+<body>
+
+	<!-- Header -->
+	<div id="mws-header" class="clearfix">
+    
+    	<!-- Logo Container -->
+    	<div id="mws-logo-container">
+        
+        	<!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
+        	<div id="mws-logo-wrap">
+            	<img src="images/mws-logo.png" alt="mws admin" />
+			</div>
+        </div>
+        
+        <!-- User Tools (notifications, logout, profile, change password) -->
+        <div id="mws-user-tools" class="clearfix">
+            
+            <!-- User Information and functions section -->
+            <div id="mws-user-info" class="mws-inset">
+            
+            	<!-- User Photo -->
+            	<div id="mws-user-photo">
+                	<img src="example/profile.jpg" alt="User Photo" />
+                </div>
+                
+                <!-- Username and Functions -->
+                <div id="mws-user-functions">
+                    <div id="mws-username">
+                        
+                    </div>
+                    <ul>
+                    	<li><a href="#">Profile</a></li>
+                        <li><a href="#">Change Password</a></li>
+                        <li><a href="index.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Start Main Wrapper -->
+    <div id="mws-wrapper">
+    
+    	<!-- Necessary markup, do not remove -->
+		<div id="mws-sidebar-stitch"></div>
+		<div id="mws-sidebar-bg"></div>
+        
+        <!-- Sidebar Wrapper -->
+           <div id="mws-sidebar">
+            
+            <!-- Main Navigation -->
+            <div id="mws-navigation">
+            	<ul>
+                	<li class="active"><a href="Hresource.html" class="mws-i-24 i-home">Home</a></li>               	
+                	<li><a href="calendar.html" class="mws-i-24 i-day-calendar">Calendar</a></li>           	
+                	<li><a href="EmployeeTimeSheet.html" class="mws-i-24 i-alarm-clock">Time Sheet</a></li>             	              	    
+                	<li><a href="bank.html" class="mws-i-24 i-file-cabinet">Bank details</a></li>  
+                	<li><a href="departments.html" class="mws-i-24 i-file-cabinet">Departments</a></li>
+                	<li><a href="applicants.html" class="mws-i-24 i-table-1">Applicants</a></li>
+                	<li><a href="registerEmployee.html" class="mws-i-24 i-pencil-edit">Add Employees</a></li>
+                	<li><a href="leave.html" class="mws-i-24 i-pencil-edit">Leave applications</a></li>          	
+                </ul>
+            </div>            
+        </div>
+        
+        <!-- Main Container Start -->
+        <div id="mws-container" class="clearfix">
+        
+        	<!-- Inner Container Start -->
+            <div class="container">
+            	<div class="mws-panel grid_8">
+                	<div class="mws-panel-header">
+                    	<span class="mws-i-24 i-sign-post">Add new Job</span>
+                    </div>
+                    <div class="mws-panel-body">
+                    	<form class="mws-form" method="post">
+                    		<div class="mws-form-inline">
+                                <div class="mws-form-row">
+                                    <label>Job Title</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" class="mws-textinput" data-bind="value:jobTitle" required="true" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>Job Level</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" class="mws-textinput" data-bind="value:jobLevel" required="true" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>job Location</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" class="mws-textinput" data-bind="value:jobLocation" required="true" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>job Category</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" class="mws-textinput" data-bind="value:jobCategory" required="true"  />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>job Type</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" class="mws-textinput" data-bind="value:jobType" required="true" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label>Job Description</label>
+                                    <div class="mws-form-item large">
+                                    	<textarea name="address" rows="100%" cols="40%" data-bind="value:jobDescription" required="true" ></textarea>
+                                    </div>
+                                </div>                                
+                                 <div class="mws-form-row">
+                                    <label>probationPeriod</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" class="mws-textinput" data-bind="value:probationPeriod" required="true"  />
+                                    </div>
+                                </div>
+                                 <div class="mws-form-row">
+                                    <label>startDate</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" id="tbStartDate" class="mws-textinput" data-bind="value:startDate" required="true" />
+                                    </div>
+                                </div>
+                                 <div class="mws-form-row">
+                                    <label>endDate</label>
+                                    <div class="mws-form-item large">
+                                    	<input type="text" name="email" id="tbEndDate" class="mws-textinput" data-bind="value:endDate" required="true" />
+                                    </div>
+                                </div>
+                    		</div>
+                    		<div class="mws-button-row">
+                    			<input type="reset" value="Clear" class="mws-button gray left" />
+                    			<input type="submit" value="Save Details" class="mws-button green" data-bind="click:saveJob" />
+                    		</div>
+                    	</form>
+                    </div>
+                </div>                
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+                       
+            <!-- Footer -->
+            <div id="mws-footer">
+            	Copyright Your Website 2012. All Rights Reserved.
+            </div>
+            
+        </div>
+        <!-- Main Container End -->
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Apple iOS and Android stuff (do not remove) -->
+<meta name="apple-mobile-web-app-capable" content="no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" />
+
+<!-- Required Stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/employee.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/overlay.css"></link>
+<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/fonts/ptsans/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/fluid.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="css/mws.style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/icons/16x16.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/icons/24x24.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/icons/32x32.css" media="screen" />
+
+<!-- Demo and Plugin Stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/demo.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="plugins/colorpicker/colorpicker.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/imgareaselect/css/imgareaselect-default.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/fullcalendar/fullcalendar.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/fullcalendar/fullcalendar.print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="plugins/chosen/chosen.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/prettyphoto/css/prettyPhoto.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/tipsy/tipsy.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/sourcerer/Sourcerer-1.2.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/jgrowl/jquery.jgrowl.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/fileinput/css/fileinput.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/spinner/spinner.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="plugins/timepicker/timepicker.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/jui/jquery.ui.css" media="screen" />
+
+<!-- Theme Stylesheet -->
+<link rel="stylesheet" type="text/css" href="css/mws.theme.css" media="screen" />
+
+<!-- JavaScript Plugins -->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+<!-- jQuery-UI Dependent Scripts -->
+<script type="text/javascript" src="plugins/spinner/jquery.mousewheel-min.js"></script>
+<script type="text/javascript" src="plugins/spinner/ui.spinner-min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="plugins/timepicker/timepicker-min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+
+<!-- Plugin Scripts -->
+<script type="text/javascript" src="plugins/imgareaselect/jquery.imgareaselect.min.js"></script>
+<script type="text/javascript" src="plugins/duallistbox/jquery.dualListBox-1.3.min.js"></script>
+<script type="text/javascript" src="plugins/jgrowl/jquery.jgrowl-min.js"></script>
+<script type="text/javascript" src="plugins/fileinput/js/jQuery.fileinput.js"></script>
+<script type="text/javascript" src="plugins/fullcalendar/fullcalendar.min.js"></script>
+<script type="text/javascript" src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="plugins/chosen/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="plugins/prettyphoto/js/jquery.prettyPhoto-min.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript" src="plugins/flot/excanvas.min.js"></script>
+<![endif]-->
+<!-- <script type="text/javascript" src="plugins/flot/jquery.flot.min.js"></script> -->
+<!-- <script type="text/javascript" src="plugins/flot/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="plugins/flot/jquery.flot.stack.min.js"></script>
+<script type="text/javascript" src="plugins/flot/jquery.flot.resize.min.js"></script> -->
+<script type="text/javascript" src="plugins/colorpicker/colorpicker-min.js"></script>
+<script type="text/javascript" src="plugins/tipsy/jquery.tipsy-min.js"></script>
+<script type="text/javascript" src="plugins/sourcerer/Sourcerer-1.2-min.js"></script>
+<script type="text/javascript" src="plugins/placeholder/jquery.placeholder-min.js"></script>
+<script type="text/javascript" src="plugins/validate/jquery.validate-min.js"></script>
+
+<!-- Core Script -->
+<script type="text/javascript" src="js/mws.js"></script>
+
+<!-- Themer Script (Remove if not needed) -->
+<script type="text/javascript" src="js/themer.js"></script>
+
+<!-- Demo Scripts (remove if not needed) -->
+<script type="text/javascript" src="js/demo.js"></script>
+<script type="text/javascript" src="js/demo.dashboard.js"></script>
+
+<script type="text/javascript" src="helpers/helpers.js"></script>
+<script type="text/javascript" src="support_js/employeeData.js"></script>
+<script type="text/javascript" src="helpers/Sessions.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+ 	<div class="mws-panel grid_4">
+                	<div class="mws-panel-header">
+                    	<span class="mws-i-24 i-alert">jQuery-UI Dialog</span>
+                    </div>
+                    <div class="mws-panel-body">
+                    	<div class="mws-panel-content">
+                        	<input type="button" id="mws-jui-dialog-mdl-btn" class="mws-button blue" value="Show Modal Dialog" />
+                            
+                       <div id="mws-jui-dialog">
+                            	<!-- <div id="updatediv" class="mws-panel-body"  > -->
+                    	<form class="mws-form" id="updated" >
+                    	<input type="hidden"  id="hf_empNumber"/>
+                    	<h3>Update details</h3>
+                        	<div class="mws-form-inline">
+                            	<div class="mws-form-row">
+                                	<label>First name</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tbfirstName" class="mws-textinput" />
+                                    </div>
+                                </div>                              
+                            	<div class="mws-form-row">
+                                	<label>Last name</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tblastName" class="mws-textinput"  />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                	<label>Identity number</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tbidNumber" class="mws-textinput" />
+                                    </div>
+                                </div>                               
+                                <div class="mws-form-row">
+                    				<label>Title</label>
+                    				<div class="mws-form-item small">
+                    					<select id="tbtitle" class="chzn-select">
+                    						<option>Mr</option>
+                    						<option>Mrs</option>
+                    						<option>Ms</option>
+                    						<option>Dr</option>
+                    						<option>Prof</option>
+                    					</select>
+                    				</div>
+                    			</div>     
+                            	<div class="mws-form-row">
+                                	<label>Email</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tbemail" class="mws-textinput" />
+                                    </div>
+                                </div>  
+                                 <div class="mws-form-row">
+                                	<label>Institution</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tbinstitution" class="mws-textinput" />
+                                    </div>
+                                </div> 
+                                 <div class="mws-form-row">
+                                	<label>Qualification</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tbqualification" class="mws-textinput" />
+                                    </div>
+                                </div>    
+                                <div class="mws-form-row">
+                                	<label>Position</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tbposition" class="mws-textinput" />
+                                    </div>
+                                </div> 
+                                 <div class="mws-form-row">
+                                	<label>Contact number</label>
+                                	<div class="mws-form-item large">
+                                    	<input type="text" id="tbcontactNumber" class="mws-textinput" />
+                                    </div>
+                                </div>                 
+                                <div class="mws-form-row">
+                    				<label>Employee Type</label>
+                    				<div class="mws-form-item small">
+                    					<select class="chzn-select" id="tbempType">
+                    						<option>Employee</option>
+                    						<option>HR</option>
+                    						<option>Manager</option>                  						
+                    					</select>
+                    				</div>
+                    			</div>
+                            </div>                          
+                            <div class="mws-button-row">
+                    			<input type="button" value="Update" onclick="update();" class="mws-button green" />
+                    			<!-- <input type="reset" value="Cancel" onclick="doCancel();" class="mws-button red" /> -->
+                    		</div>
+                        </form>
+                    <!-- </div>  -->           
+                        </div>
+                        </div>
+                    </div>    	
+                </div>
+</body>
+</html>

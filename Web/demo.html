@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css" />
+        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables_themeroller.css" />
+        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/css/bootstrap.css" />
+        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/css/bootstrap-theme.css" />
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.0.0/amelia/bootstrap.min.css" />
+        <title>Validation Test</title>
+
+        <style>
+            .validate-name-required {
+            }
+
+            .validate-score {
+            }
+        </style>
+    </head>
+    <body style="margin:24pt;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Validation with jQuery Validate and Knockout.JS</h2>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" id="gameInfo" method="get" action="">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="FirstName">First Name:</label>
+                        <div class="col-md-6"><input type="text" class="form-control" name="FirstName" value="" required="required" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="LastName">Last Name:</label>
+                        <div class="col-md-6"><input type="text" class="form-control" name="LastName" value="" required="required" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-10">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th style="width:50%">Game</th>
+                                        <th style="width:30%">Score</th>
+                                        <th style="width:20%"><button type="button" class="btn btn-default" data-bind="click: AddGame">Add Game</button></th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: Games">
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control validate-name-required" data-bind="value: Name, uniqueName: true" />
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control validate-score" data-bind="value: Score, uniqueName: true" />
+                                        </td>
+                                        <td>
+                                            <input type="button" class="btn btn-xs btn-danger" data-bind="click: $root.RemoveGame" value="Remove Game" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <input class="btn btn-lg btn-primary" type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/bootstrap/3.0.0/bootstrap.js"></script>
+
+        <script type="text/javascript">
+            function GameViewModel() {
+                var self = this;
+
+                this.Name = '';
+                this.Score = '';
+            }
+
+            function ViewModel() {
+                var self = this;
+
+                self.Games = ko.observableArray();
+
+                self.AddGame = function () {
+                    self.Games.push(new GameViewModel());
+                };
+
+                self.RemoveGame = function (game) {
+                    self.Games.destroy(game);
+                }
+            }
+
+            function ValidateInteger(value, element, param) {
+                if (!value) {
+                    // Null and empty strings are invalid as far as we are concerned.
+                    return false;
+                }
+
+                var parsedNumber = parseInt(value);
+
+                if (isNaN(parsedNumber)) {
+                    return false;
+                }
+                else {
+                    return (value == parsedNumber);
+                }
+            }
+
+            function DefineValidationRules() {
+                $.validator.addMethod("gameName", $.validator.methods.required, "The name of the Game must be specified");
+                $.validator.addMethod("gameScore", ValidateInteger, "The Score must be an integer");
+                $.validator.addMethod("gameScoreMin", $.validator.methods.min, $.format("The Score must be greater than or equal to {0}"));
+                $.validator.addMethod("gameScoreMax", $.validator.methods.max, $.format("The Score value must be less than or equal to {0}"));
+
+                $.validator.addClassRules("validate-name-required", { gameName: true });
+                $.validator.addClassRules("validate-score", { gameScore: true, gameScoreMin: 0, gameScoreMax: 25 });
+            }
+
+            $(document).ready(InitializeForm);
+
+            function InitializeForm() {
+                $.validator.setDefaults({
+                    submitHandler: function () { alert('Submitted'); }
+                });
+
+                DefineValidationRules();
+
+                ko.applyBindings(new ViewModel());
+                $('#gameInfo').validate();
+            }
+        </script>
+    </body>
+</html>
